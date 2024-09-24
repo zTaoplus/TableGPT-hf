@@ -1,0 +1,91 @@
+{
+  "architectures": [
+    "TableGPTForCausalLM"
+  ],
+  "auto_map":{
+    "AutoConfig": "configuration_tablegpt.TableGPTConfig",
+    "AutoModel":"modeling_tablegpt.TableGPTChatModel"
+  },
+  "model_type": "tablegpt",
+  "torch_dtype": "bfloat16",
+  "is_encoder_decoder":false,
+  "llm_config": {
+    "_name_or_path": "Qwen/Qwen2-7B",
+    "architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "attention_dropout": 0.0,
+    "bos_token_id": 151643,
+    "eos_token_id": 151643,
+    "hidden_act": "silu",
+    "hidden_size": 3584,
+    "initializer_range": 0.02,
+    "intermediate_size": 18944,
+    "max_position_embeddings": 131072,
+    "max_window_layers": 28,
+    "model_type": "qwen2",
+    "num_attention_heads": 28,
+    "num_hidden_layers": 28,
+    "num_key_value_heads": 4,
+    "rms_norm_eps": 1e-06,
+    "rope_theta": 1000000.0,
+    "sliding_window": 131072,
+    "tie_word_embeddings": false,
+    "torch_dtype": "bfloat16",
+    "transformers_version": "4.41.2",
+    "use_cache": false,
+    "use_sliding_window": false,
+    "vocab_size": 152064
+  },
+  "encoder_config": {
+    "num_cols": 20,
+    "depth": 12,
+    "heads": 16,
+    "attn_dropout": 0.1,
+    "ff_dropout": 0.1,
+    "cont_dim":256,
+    "attentiontype": "colrow",
+    "pred_type": "contrastive",
+    "dim_head": 64,
+    "pooling": "mean",
+    "col_name": false,
+    "numeric_mlp": false,
+    "max_rows": 50,
+    "max_cols": 100,
+    "subfolder":"encoder",
+    "encoder_max_length": 64,
+    "insert_embs_token": "<insert_embs>",
+    "insert_embs_token_id": -114,
+    "insert_seq_token": "<insert_sep>",
+    "st_config":{
+      "architectures": [
+        "BertModel"
+      ],
+      "attention_probs_dropout_prob": 0.1,
+      "gradient_checkpointing": false,
+      "hidden_act": "gelu",
+      "hidden_dropout_prob": 0.1,
+      "hidden_size": 384,
+      "initializer_range": 0.02,
+      "intermediate_size": 1536,
+      "layer_norm_eps": 1e-12,
+      "max_position_embeddings": 512,
+      "model_type": "bert",
+      "num_attention_heads": 12,
+      "num_hidden_layers": 6,
+      "pad_token_id": 0,
+      "position_embedding_type": "absolute",
+      "transformers_version": "4.8.2",
+      "type_vocab_size": 2,
+      "use_cache": true,
+      "vocab_size": 30522
+    }
+  },
+  "projector_config": {
+    "mlp_depth": 2,
+    "encoder_hidden_size": 3584,
+    "decoder_hidden_size": 3584,
+    "num_heads": 1,
+    "multihead": false
+  }
+}
