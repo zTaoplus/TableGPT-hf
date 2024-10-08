@@ -6,7 +6,7 @@
     "AutoConfig": "configuration_tablegpt.TableGPTConfig",
     "AutoModel":"modeling_tablegpt.TableGPTChatModel"
   },
-  "model_type": "tablegpt",
+  "model_type": "tablegpt_contrastive",
   "torch_dtype": "bfloat16",
   "is_encoder_decoder":false,
   "llm_config": {
