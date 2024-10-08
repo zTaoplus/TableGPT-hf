@@ -1,6 +1,6 @@
 {
   "architectures": [
-    "TableGPTForCausalLM"
+    "TableGPTContrastiveForCausalLM"
   ],
   "auto_map":{
     "AutoConfig": "configuration_tablegpt.TableGPTConfig",
